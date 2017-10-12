@@ -78,7 +78,7 @@ $(function() {
     describe('Initial Entries', function() {
 
         beforeEach(function(done) {
-            loadFeed(0, done)
+            loadFeed(0, done);
         });
 
         it('should have at least a single .entry element within the .feed container', function() {
