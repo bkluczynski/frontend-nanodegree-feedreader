@@ -33,8 +33,8 @@ $(function() {
          */
         it('ensures the url has been defined and it is not empty', function() {
             allFeeds.forEach(function(feed) {
-                expect(feed.url).toBeDefined()
-                expect(feed.url.length).toBeGreaterThan(0)
+                expect(feed.url).toBeDefined();
+                expect(feed.url.length).toBeGreaterThan(0);
             })
         })
 
@@ -44,10 +44,10 @@ $(function() {
           */
         it('ensures the name has been defined and it is not empty', function() {
             allFeeds.forEach(function(feed) {
-                expect(feed.name).toBeDefined()
-                expect(feed.url.length).toBeGreaterThan(0)
-            })
-        })
+                expect(feed.name).toBeDefined();
+                expect(feed.url.length).toBeGreaterThan(0);
+            });
+        });
     });
 
     describe('The menu', function() {
@@ -59,8 +59,8 @@ $(function() {
            * hiding/showing of the menu element.
            */
         it('checks the menu element is hidden by default', function() {
-            expect($('.menu-hidden .slide-menu').is(':visible')).toBe(true)
-        })
+            expect($('.menu-hidden .slide-menu').is(':visible')).toBe(true);
+        });
 
         /* : Write a test that ensures the menu changes
            * visibility when the menu icon is clicked. This test
@@ -68,23 +68,23 @@ $(function() {
            * clicked and does it hide when clicked again.
            */
         it('checks the visiblity changes when the menu icon is clicked', function() {
-            let clickedIcon = $('.icon-list').click()
-            expect($('.menu-hidden .slide-menu').is(':visible')).toBe(false)
-        })
-    })
+            let clickedIcon = $('.icon-list').click();
+            expect($('.menu-hidden .slide-menu').is(':visible')).toBe(false);
+        });
+    });
     /* : Write a new test suite named "Initial Entries" */
     describe('Initial Entries', function() {
 
         beforeEach(function(done) {
             loadFeed(0, function() {
                 done();
-            })
-        })
+            });
+        });
 
         it('should have at least a single .entry element within the .feed container', function() {
-            let entries = document.querySelector(".feed").getElementsByClassName("entry").length
-            expect(entries).toBeGreaterThan(0)
-        })
+            let entries = document.querySelector(".feed").getElementsByClassName("entry").length;
+            expect(entries).toBeGreaterThan(0);
+        });
         /* : Write a test that ensures when the loadFeed
              * function is called and completes its work, there is at least
              * a single .entry element within the .feed container.
@@ -92,7 +92,7 @@ $(function() {
              * the use of Jasmine's beforeEach and asynchronous done() function.
              */
 
-    })
+    });
     /* : Write a new test suite named "New Feed Selection" */
     describe('New Feed Selection', function() {
         let feedFirst;
@@ -100,19 +100,19 @@ $(function() {
             loadFeed(0, function() {
                 feedFirst = document.querySelector(".feed").innerHTML;
                 loadFeed(1, function() {
-                    done()
-                })
-            })
-        })
+                    done();
+                });
+            });
+        });
         /* : Write a test that ensures when a new feed is loaded
                * by the loadFeed function that the content actually changes.
                * Remember, loadFeed() is asynchronous.
                */
 
         it('should show when the new feed is loaded the content changes', function() {
-            let secondFeed = document.querySelector('.feed').innerHTML
-            expect(secondFeed).not.toBe(feedFirst)
-        })
-    })
+            let secondFeed = document.querySelector('.feed').innerHTML;
+            expect(secondFeed).not.toBe(feedFirst);
+        });
+    });
 
 }());
