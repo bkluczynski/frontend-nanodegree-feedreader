@@ -35,8 +35,8 @@ $(function() {
             allFeeds.forEach(function(feed) {
                 expect(feed.url).toBeDefined();
                 expect(feed.url.length).toBeGreaterThan(0);
-            })
-        })
+            });
+        });
 
         /* Write a test that loops through each feed
           * in the allFeeds object and ensures it has a name defined
