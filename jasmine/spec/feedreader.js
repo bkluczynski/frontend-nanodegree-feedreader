@@ -45,7 +45,7 @@ $(function() {
         it('ensures the name has been defined and it is not empty', function() {
             allFeeds.forEach(function(feed) {
                 expect(feed.name).toBeDefined();
-                expect(feed.url.length).toBeGreaterThan(0);
+                expect(feed.name.length).toBeGreaterThan(0);
             });
         });
     });
@@ -70,15 +70,15 @@ $(function() {
         it('checks the visiblity changes when the menu icon is clicked', function() {
             let clickedIcon = $('.icon-list').click();
             expect($('.menu-hidden .slide-menu').is(':visible')).toBe(false);
+            clickedIcon.click();
+            expect($('.menu-hidden .slide-menu').is(':visible')).toBe(true);
         });
     });
     /* : Write a new test suite named "Initial Entries" */
     describe('Initial Entries', function() {
 
         beforeEach(function(done) {
-            loadFeed(0, function() {
-                done();
-            });
+            loadFeed(0, done)
         });
 
         it('should have at least a single .entry element within the .feed container', function() {
